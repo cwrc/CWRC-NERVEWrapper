@@ -1,0 +1,40 @@
+{
+  "name": "cwrc-nerve-wrapper",
+  "version": "0.0.1",
+  "description": "A wrapper for the NERVE client/server functionality, for use in CWRC-Writer",
+  "main": "dist/nervewrapper.js",
+  "scripts": {
+    "test": "browserify src/test.js -g babelify | derequire > dist/test.js",
+    "build": "browserify src/index.js -g babelify -s NERVEWrapper | derequire > dist/nervewrapper.js"
+  },
+  "author": "Andrew MacDonald",
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cwrc/CWRC-NERVEWrapper.git"
+  },
+  "browser": {
+    "@thaerious/nidget": "./src/nidget"
+  },
+  "dependencies": {
+    "jjjrmi": "^0.4.22",
+    "jjjsql": "^1.1.3",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "babelify": "^8.0.0",
+    "browserify": "^16.2.3",
+    "derequire": "^2.0.6"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
